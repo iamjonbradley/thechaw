@@ -69,6 +69,8 @@ class SshKey extends AppModel {
 		}
 		$this->type = strtolower($this->data['SshKey']['type']);
 		$path = Configure::read("Content.{$this->type}") . 'repo' . DS . '.ssh' . DS . 'authorized_keys';
+		debug ($path);
+		die;
 		if (!empty($this->_File) && $this->_File->path == $path) {
 			if ($this->_File->exists() != true) {
 				$this->_File->create();
